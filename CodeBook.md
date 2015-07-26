@@ -9,20 +9,17 @@ The information below was copied & pasted from http://archive.ics.uci.edu/ml/dat
 >The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
 ##  Variables
-### How variables were chosen:
+There are 2 types of variables referred to below: Label Variables (for identifying experimental conditions) and Motion Variables (numeric data with absolute value <= 1, showing different dynamical aspects of the motion of the smartphone)
   * Label Variables
-     * *Definition*: variable describing the activity or subject
-     * Label Variables
-        * **subject**: integer value, 1-30, each value signifying a unique subject in the study
-        * **activity_id**: integer value, 1-6
-           * 1 WALKING
-           * 2 WALKING_UPSTAIRS
-           * 3 WALKING_DOWNSTAIRS
-           * 4 SITTING
-           * 5 STANDING
-           * 6 LAYING
+     * **subject**: integer value, 1-30, each value signifying a unique subject in the study
+     * **activity_id**: integer value, 1-6
+        * 1 WALKING
+        * 2 WALKING_UPSTAIRS
+        * 3 WALKING_DOWNSTAIRS
+        * 4 SITTING
+        * 5 STANDING
+        * 6 LAYING
   * Motion Variables
-     * *Definition*: variable containing numeric decimal values (absolute value <= 1) describing motion of smartphone
      * In the UCI HAR dataset, there are 561 motion variables, 79 of which have either "mean" or "std" in their name, and do not have "angle" in their name. These 79 variables were chosen for the tidy data set, and variables were re-named according to the schema shown below in the "Variable Name" section
 
 Motion Variable Name = [domain].[acceleration signal].[device].[type of variable].[summary statistic]
