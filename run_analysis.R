@@ -89,15 +89,15 @@ df_mean_std2 <- merge(df_mean_std, activity_labels, by.x="activity_id", by.y="ac
                     subject = df_mean_std2[,82], dataset = df_mean_std2[,81],df_mean_std2[,2:80])  
 
     # Write re-ordered data frame to csv file in working directory
-    write.table(df_mean_std2_ordered, "UCI_HAR_data_withdescriptions.txt", row.names=FALSE)
+    write.csv(df_mean_std2_ordered, "UCI_HAR_data_withdescriptions.csv", row.names=FALSE)
     
   ## Dataset #2: tidy data set with the average of each variable for each activity and each subject.
     
     # Write df_mean_std2_mean to csv file in working directory
-    write.table(df_mean_std2_mean, "UCI_HAR_data_tidyaverages.txt", row.names=FALSE)
+    write.csv(df_mean_std2_mean, "UCI_HAR_data_tidyaverages.csv", row.names=FALSE)
   
   ## Clean-up: Clear all objects created in this script out of the R Global Environment  
-    #rm(list=c("activity_labels", "df", "df_mean_std", "df_mean_std2", "df_mean_std2_mean",
-    #"df_mean_std2_ordered", "features", "merged_subject", "merged_X", "merged_y",
-    #"subject_test", "subject_train", "X_test", "X_train", "y_test", "y_train"))
+    rm(list=c("activity_labels", "df", "df_mean_std", "df_mean_std2", "df_mean_std2_mean",
+    "df_mean_std2_ordered", "features", "merged_subject", "merged_X", "merged_y",
+    "subject_test", "subject_train", "X_test", "X_train", "y_test", "y_train"))
   
