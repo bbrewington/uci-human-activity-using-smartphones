@@ -11,7 +11,7 @@ library(plyr)
 ### Step 1: Get Data ----
 
 ## Set working directory to subdirectory of unzipped UCI HAR Dataset folder
-setwd("UCI HAR Dataset/UCI HAR Dataset")
+setwd("UCI HAR Dataset")
 
 ## Get data and properly label column names
   #features: column names for datasets
@@ -43,7 +43,6 @@ setwd("UCI HAR Dataset/UCI HAR Dataset")
 	colnames(subject_train) <- "subject"
 
 ## Set working directory back to original
-setwd("..")
 setwd("..")
 
 ### Step 2: Merge Training & Test Datasets ----
