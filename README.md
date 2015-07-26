@@ -1,7 +1,7 @@
 # uci-human-activity-using-smartphones
 Course Project for Coursera Data Science Specialization, "Getting and Cleaning Data" - converting UCI's "Human Activity Using Smartphones" dataset to tidy data format
 
-1. Download data from this zip file into working directory
+1. Download data from this zip file, and extract contents into working directory
    * https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 2. In this github repository, download script **run_analysis.R** to your working directory
    * Link to repo: https://github.com/bbrewington/uci-human-activity-using-smartphones
