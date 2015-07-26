@@ -81,6 +81,49 @@ df_mean_std2 <- merge(df_mean_std, activity_labels, by.x="activity_id", by.y="ac
   # columns, which leaves out variables "dataset" and "activity"
   df_mean_std2_mean <- ddply(df_mean_std2, c("subject","activity_id"),colwise(mean,is.numeric))
 
+  # Name columns neatly, and assign to names of df_mean_std2_mean
+  neat_column_names <- c("subject", "activity_id", "time.body.accelerometer.3axialX.mean", 
+                         "time.body.accelerometer.3axialY.mean", "time.body.accelerometer.3axialZ.mean", 
+                         "time.body.accelerometer.3axialX.std", "time.body.accelerometer.3axialY.std", 
+                         "time.body.accelerometer.3axialZ.std", "time.gravity.accelerometer.3axialX.mean", 
+                         "time.gravity.accelerometer.3axialY.mean", "time.gravity.accelerometer.3axialZ.mean", 
+                         "time.gravity.accelerometer.3axialX.std", "time.gravity.accelerometer.3axialY.std", 
+                         "time.gravity.accelerometer.3axialZ.std", "time.body.accelerometer.jerk3axialX.mean", 
+                         "time.body.accelerometer.jerk3axialY.mean", "time.body.accelerometer.jerk3axialZ.mean", 
+                         "time.body.accelerometer.jerk3axialX.std", "time.body.accelerometer.jerk3axialY.std", 
+                         "time.body.accelerometer.jerk3axialZ.std", "time.body.gyroscope.3axialX.mean", 
+                         "time.body.gyroscope.3axialY.mean", "time.body.gyroscope.3axialZ.mean", 
+                         "time.body.gyroscope.3axialX.std", "time.body.gyroscope.3axialY.std", 
+                         "time.body.gyroscope.3axialZ.std", "time.body.gyroscope.jerk3axialX.mean", 
+                         "time.body.gyroscope.jerk3axialY.mean", "time.body.gyroscope.jerk3axialZ.mean", 
+                         "time.body.gyroscope.jerk3axialX.std", "time.body.gyroscope.jerk3axialY.std", 
+                         "time.body.gyroscope.jerk3axialZ.std", "time.body.accelerometer.magnitude.mean", 
+                         "time.body.accelerometer.magnitude.std", "time.gravity.accelerometer.magnitude.mean", 
+                         "time.gravity.accelerometer.magnitude.std", "time.body.accelerometer.jerkmagnitude.mean", 
+                         "time.body.accelerometer.jerkmagnitude.std", "time.body.gyroscope.magnitude.mean", 
+                         "time.body.gyroscope.magnitude.std", "time.body.gyroscope.jerkmagnitude.mean", 
+                         "time.body.gyroscope.jerkmagnitude.std", "frequency.body.accelerometer.3axialX.mean", 
+                         "frequency.body.accelerometer.3axialY.mean", "frequency.body.accelerometer.3axialZ.mean", 
+                         "frequency.body.accelerometer.3axialX.std", "frequency.body.accelerometer.3axialY.std", 
+                         "frequency.body.accelerometer.3axialZ.std", "frequency.body.accelerometer.3axialX.meanFreq", 
+                         "frequency.body.accelerometer.3axialY.meanFreq", "frequency.body.accelerometer.3axialZ.meanFreq", 
+                         "frequency.body.accelerometer.jerk3axialX.mean", "frequency.body.accelerometer.jerk3axialY.mean", 
+                         "frequency.body.accelerometer.jerk3axialZ.mean", "frequency.body.accelerometer.jerk3axialX.std", 
+                         "frequency.body.accelerometer.jerk3axialY.std", "frequency.body.accelerometer.jerk3axialZ.std", 
+                         "frequency.body.accelerometer.jerk3axialX.meanFreq", "frequency.body.accelerometer.jerk3axialY.meanFreq", 
+                         "frequency.body.accelerometer.jerk3axialZ.meanFreq", "frequency.body.gyroscope.3axialX.mean", 
+                         "frequency.body.gyroscope.3axialY.mean", "frequency.body.gyroscope.3axialZ.mean", 
+                         "frequency.body.gyroscope.3axialX.std", "frequency.body.gyroscope.3axialY.std", 
+                         "frequency.body.gyroscope.3axialZ.std", "frequency.body.gyroscope.3axialX.meanFreq", 
+                         "frequency.body.gyroscope.3axialY.meanFreq", "frequency.body.gyroscope.3axialZ.meanFreq", 
+                         "frequency.body.accelerometer.magnitude.mean", "frequency.body.accelerometer.magnitude.std", 
+                         "frequency.body.accelerometer.magnitude.meanFreq", "frequency.body.accelerometer.jerkmagnitude.mean", 
+                         "frequency.body.accelerometer.jerkmagnitude.std", "frequency.body.accelerometer.jerkmagnitude.meanFreq", 
+                         "frequency.body.gyroscope.magnitude.mean", "frequency.body.gyroscope.magnitude.std", 
+                         "frequency.body.gyroscope.magnitude.meanFreq", "frequency.body.gyroscope.jerkmagnitude.mean", 
+                         "frequency.body.gyroscope.jerkmagnitude.std", "frequency.body.gyroscope.jerkmagnitude.meanFreq")
+  names(df_mean_std2_mean) <- neat_column_names
+  
 ### Final Processing ----
   ## Dataset #1: with descriptive variable names
 
@@ -99,5 +142,5 @@ df_mean_std2 <- merge(df_mean_std, activity_labels, by.x="activity_id", by.y="ac
   ## Clean-up: Clear all objects created in this script out of the R Global Environment  
     rm(list=c("activity_labels", "df", "df_mean_std", "df_mean_std2", "df_mean_std2_mean",
     "df_mean_std2_ordered", "features", "merged_subject", "merged_X", "merged_y",
-    "subject_test", "subject_train", "X_test", "X_train", "y_test", "y_train"))
+    "subject_test", "subject_train", "X_test", "X_train", "y_test", "y_train", "neat_column_names"))
   
